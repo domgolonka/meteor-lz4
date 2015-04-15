@@ -1,18 +1,16 @@
 Package.describe({
   name: 'domgolonka:lz4',
-  version: '0.0.1',
-  // Brief, one-line summary of the package.
-  summary: '',
-  // URL to the Git repository containing the source code for this package.
-  git: '',
-  // By default, Meteor will default to using README.md for documentation.
-  // To avoid submitting documentation, set this field to null.
+  version: '0.10.0',
+  summary: 'Wrapper for the Package Node-Lz4',
+  git: 'https://github.com/domgolonka/meteor-lz4',
   documentation: 'README.md'
 });
-
+Npm.depends({
+  lz4: "0.4.0"
+});
 Package.onUse(function(api) {
   api.versionsFrom('1.1.0.2');
-  api.addFiles('lz4.js');
+  api.addFiles(['lib/lz4.js'],['server']);
 });
 
 Package.onTest(function(api) {
